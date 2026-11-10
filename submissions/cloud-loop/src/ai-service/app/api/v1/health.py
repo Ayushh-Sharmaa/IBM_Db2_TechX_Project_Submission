@@ -16,6 +16,12 @@ def health_status():
 
     return {
         "status": "ok",
+        "state": "healthy",
+        "database": settings.database_name,
+        "ai": {
+            "engine": "IBM Db2 & Haystack 384-dim COSINE Vector Matcher",
+            "model": settings.EMBEDDING_MODEL,
+        },
         "service": settings.APP_NAME,
         "version": settings.APP_VERSION,
         "timestamp": datetime.now(timezone.utc).isoformat(),
